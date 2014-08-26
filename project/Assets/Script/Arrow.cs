@@ -4,6 +4,7 @@ using System.Collections;
 public class Arrow : MonoBehaviour {
 
 	public string direction;
+	public bool pressed;
 	private float arrowSpeed;
 
 	private void Start(){

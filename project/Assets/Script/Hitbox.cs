@@ -5,6 +5,7 @@ public class Hitbox : MonoBehaviour {
 
 	private string directionInBox; //richting van de pijl in de hitbox
 	private string directionPressed; //richting van de pijl die ingedrukt is
+	private GameObject arrowInHitBox;
 
 	public GameObject debugText; //de text van de richting van de pijl in de hitbox
 	public GameObject GameController; //de Gamecontroller
@@ -13,6 +14,7 @@ public class Hitbox : MonoBehaviour {
 		if(col.transform.tag == "Arrow"){
 			directionInBox = col.GetComponent<Arrow>().Direction;
 			debugText.GetComponent<DEBUG>().UpdateDEBUG(directionInBox);
+			arrowInHitBox = col.gameObject;
 		}
 	}
 
@@ -21,6 +23,7 @@ public class Hitbox : MonoBehaviour {
 			directionPressed = "down";
 			if(directionInBox == directionPressed){
 				GameController.GetComponent<GameController>().OnAction(true);
+				Destroy(arrowInHitBox.gameObject);
 			}else{
 				GameController.GetComponent<GameController>().OnAction(false);
 			}
@@ -28,6 +31,7 @@ public class Hitbox : MonoBehaviour {
 			directionPressed = "right";
 			if(directionInBox == directionPressed){
 				GameController.GetComponent<GameController>().OnAction(true);
+				Destroy(arrowInHitBox.gameObject);
 			}else{
 				GameController.GetComponent<GameController>().OnAction(false);
 			}
@@ -35,6 +39,7 @@ public class Hitbox : MonoBehaviour {
 			directionPressed = "up";
 			if(directionInBox == directionPressed){
 				GameController.GetComponent<GameController>().OnAction(true);
+				Destroy(arrowInHitBox.gameObject);
 			}else{
 				GameController.GetComponent<GameController>().OnAction(false);
 			}
@@ -42,6 +47,7 @@ public class Hitbox : MonoBehaviour {
 			directionPressed = "left";
 			if(directionInBox == directionPressed){
 				GameController.GetComponent<GameController>().OnAction(true);
+				Destroy(arrowInHitBox.gameObject);
 			}else{
 				GameController.GetComponent<GameController>().OnAction(false);
 			}
@@ -51,5 +57,6 @@ public class Hitbox : MonoBehaviour {
 	private void OnTriggerExit2D(Collider2D col){
 		directionInBox = "none";
 		debugText.GetComponent<DEBUG>().UpdateDEBUG(directionInBox);
+		arrowInHitBox = null;
 	}
 }
