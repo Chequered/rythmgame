@@ -1,62 +1,78 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Hitbox : MonoBehaviour {
 
-	private string directionInBox; //richting van de pijl in de hitbox
 	private string directionPressed; //richting van de pijl die ingedrukt is
-	private GameObject arrowInHitBox;
+	private List<GameObject> arrowsInHitBox = new List<GameObject>();
 
 	public GameObject debugText; //de text van de richting van de pijl in de hitbox
 	public GameObject GameController; //de Gamecontroller
 
 	private void OnTriggerEnter2D(Collider2D col){
 		if(col.transform.tag == "Arrow"){
-			directionInBox = col.GetComponent<Arrow>().Direction;
-			debugText.GetComponent<DEBUG>().UpdateDEBUG(directionInBox);
-			arrowInHitBox = col.gameObject;
+			arrowsInHitBox.Add(col.gameObject);
 		}
 	}
 
 	private void Update(){
+		GetInput();
+		Debug.Log (arrowsInHitBox.Count);
+	}
+
+	private bool hadOne;
+	private void GetInput(){
+		if(Input.GetKeyDown(KeyCode.UpArrow)){
+			foreach(GameObject arrow in arrowsInHitBox){
+				if(arrow.GetComponent<Arrow>().Direction == "up"){
+					ProcessArrow(arrow);
+				}
+			}
+			if(!hadOne){
+				GameController.GetComponent<GameController>().OnAction(false);
+			}hadOne = false;
+		}
+		if(Input.GetKeyDown(KeyCode.RightArrow)){
+			foreach(GameObject arrow in arrowsInHitBox){
+				if(arrow.GetComponent<Arrow>().Direction == "right"){
+					ProcessArrow(arrow);
+				}
+			}
+			if(!hadOne){
+				GameController.GetComponent<GameController>().OnAction(false);
+			}hadOne = false;
+		}
 		if(Input.GetKeyDown(KeyCode.DownArrow)){
-			directionPressed = "down";
-			if(directionInBox == directionPressed){
-				GameController.GetComponent<GameController>().OnAction(true);
-				Destroy(arrowInHitBox.gameObject);
-			}else{
-				GameController.GetComponent<GameController>().OnAction(false);
+			foreach(GameObject arrow in arrowsInHitBox){
+				if(arrow.GetComponent<Arrow>().Direction == "down"){
+					ProcessArrow(arrow);
+				}
 			}
-		}else if(Input.GetKeyDown(KeyCode.RightArrow)){
-			directionPressed = "right";
-			if(directionInBox == directionPressed){
-				GameController.GetComponent<GameController>().OnAction(true);
-				Destroy(arrowInHitBox.gameObject);
-			}else{
+			if(!hadOne){
 				GameController.GetComponent<GameController>().OnAction(false);
+			}hadOne = false;
+		}
+		if(Input.GetKeyDown(KeyCode.LeftArrow)){
+			foreach(GameObject arrow in arrowsInHitBox){
+				if(arrow.GetComponent<Arrow>().Direction == "left"){
+					ProcessArrow(arrow);
+				}
 			}
-		}else if(Input.GetKeyDown(KeyCode.UpArrow)){
-			directionPressed = "up";
-			if(directionInBox == directionPressed){
-				GameController.GetComponent<GameController>().OnAction(true);
-				Destroy(arrowInHitBox.gameObject);
-			}else{
+			if(!hadOne){
 				GameController.GetComponent<GameController>().OnAction(false);
-			}
-		}else if(Input.GetKeyDown(KeyCode.LeftArrow)){
-			directionPressed = "left";
-			if(directionInBox == directionPressed){
-				GameController.GetComponent<GameController>().OnAction(true);
-				Destroy(arrowInHitBox.gameObject);
-			}else{
-				GameController.GetComponent<GameController>().OnAction(false);
-			}
+			}hadOne = false;
 		}
 	}
 
+	private void ProcessArrow(GameObject arrow){
+		GameController.GetComponent<GameController>().OnAction(true);
+		hadOne = true;
+		arrowsInHitBox.Remove(arrow);
+		Destroy(arrow.gameObject);
+	}
+
 	private void OnTriggerExit2D(Collider2D col){
-		directionInBox = "none";
-		debugText.GetComponent<DEBUG>().UpdateDEBUG(directionInBox);
-		arrowInHitBox = null;
+		arrowsInHitBox.Remove(col.gameObject);
 	}
 }

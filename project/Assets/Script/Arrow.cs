@@ -4,11 +4,21 @@ using System.Collections;
 public class Arrow : MonoBehaviour {
 
 	public string direction;
-	public bool pressed;
 	private float arrowSpeed;
 
 	private void Start(){
 		arrowSpeed = GameController.globalArrowSpeed;
+		int stance = (int)Random.Range(0,3);
+		transform.Rotate(new Vector3(0,0,stance * 90));
+		if (stance == 0){
+			direction = "right";
+		}else if(stance == 1){
+			direction = "up";
+		}else if(stance == 2){
+			direction = "left";
+		}else if(stance == 3){
+			direction = "down";
+		}
 	}
 
 	Vector2 pos;

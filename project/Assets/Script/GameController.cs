@@ -13,7 +13,6 @@ public class GameController : MonoBehaviour {
 	public static float globalArrowSpeed;
 
 	private void Awake(){
-		Debug.Log ("GC");
 		lives = startingHealth;
 		globalArrowSpeed = _globalArrowSpeed;
 		addedScore = 50;
