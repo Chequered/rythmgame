@@ -10,30 +10,29 @@ public class Hitbox : MonoBehaviour {
 	public GameObject debugText; //de text van de richting van de pijl in de hitbox
 	public GameObject GameController; //de Gamecontroller
 
-	private void OnTriggerEnter2D(Collider2D col){
-		if(col.transform.tag == "Arrow"){
-			arrowsInHitBox.Add(col.gameObject);
+	private void OnTriggerEnter2D(Collider2D col){ //een collider in de hitbox komt
+		if(col.transform.tag == "Arrow"){ //checkt of de collider een arrow is.
+			arrowsInHitBox.Add(col.gameObject); //voegt hem toe aan de lijst met arrows die nu in de hitbox zitten.
 		}
 	}
 
 	private void Update(){
-		GetInput();
-		Debug.Log (arrowsInHitBox.Count);
+		GetInput(); //Input van keyboard
 	}
 
-	private bool hadOne;
+	private bool hadOne;//een boolean die aangeeft of er een arrow goed was tijdens een foreach loop
 	private void GetInput(){
-		if(Input.GetKeyDown(KeyCode.UpArrow)){
-			foreach(GameObject arrow in arrowsInHitBox){
-				if(arrow.GetComponent<Arrow>().Direction == "up"){
-					ProcessArrow(arrow);
+		if(Input.GetKeyDown(KeyCode.UpArrow)){//als je de up arrow indrukt
+			foreach(GameObject arrow in arrowsInHitBox){//een loop die de directie van elke arrow vergelijkt met de knop die ingedrukt word.
+				if(arrow.GetComponent<Arrow>().Direction == "up"){ //als de richting klopt met de knop
+					ProcessArrow(arrow);//do er dan iets meer
 				}
 			}
-			if(!hadOne){
-				GameController.GetComponent<GameController>().OnAction(false);
-			}hadOne = false;
+			if(!hadOne){//als er geen arrow goed was (dus als je de verkeerde knop hebt ingedrukt)
+				GameController.GetComponent<GameController>().OnAction(false);//process hem dan
+			}hadOne = false;//reset de boolean
 		}
-		if(Input.GetKeyDown(KeyCode.RightArrow)){
+		if(Input.GetKeyDown(KeyCode.RightArrow)){//als je de right arrow indrukt
 			foreach(GameObject arrow in arrowsInHitBox){
 				if(arrow.GetComponent<Arrow>().Direction == "right"){
 					ProcessArrow(arrow);
@@ -43,7 +42,7 @@ public class Hitbox : MonoBehaviour {
 				GameController.GetComponent<GameController>().OnAction(false);
 			}hadOne = false;
 		}
-		if(Input.GetKeyDown(KeyCode.DownArrow)){
+		if(Input.GetKeyDown(KeyCode.DownArrow)){//als je de down arrow indrukt
 			foreach(GameObject arrow in arrowsInHitBox){
 				if(arrow.GetComponent<Arrow>().Direction == "down"){
 					ProcessArrow(arrow);
@@ -53,7 +52,7 @@ public class Hitbox : MonoBehaviour {
 				GameController.GetComponent<GameController>().OnAction(false);
 			}hadOne = false;
 		}
-		if(Input.GetKeyDown(KeyCode.LeftArrow)){
+		if(Input.GetKeyDown(KeyCode.LeftArrow)){//als je de left arrow indrukt
 			foreach(GameObject arrow in arrowsInHitBox){
 				if(arrow.GetComponent<Arrow>().Direction == "left"){
 					ProcessArrow(arrow);
@@ -66,13 +65,14 @@ public class Hitbox : MonoBehaviour {
 	}
 
 	private void ProcessArrow(GameObject arrow){
-		GameController.GetComponent<GameController>().OnAction(true);
-		hadOne = true;
-		arrowsInHitBox.Remove(arrow);
-		Destroy(arrow.gameObject);
+		GameController.GetComponent<GameController>().OnAction(true); //process de arrow
+		hadOne = true; //reset the boolean
+		arrowsInHitBox.Remove(arrow); //haal de arrow uit de array
+		Destroy(arrow.gameObject); //Vernietig de arrow
+		particleSystem.Emit(50); //emit een paar particles
 	}
 
 	private void OnTriggerExit2D(Collider2D col){
-		arrowsInHitBox.Remove(col.gameObject);
+		arrowsInHitBox.Remove(col.gameObject); //verwijder de arrow.
 	}
 }
