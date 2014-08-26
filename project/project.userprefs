@@ -1,11 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Hitbox.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Lives.cs">
     <Files>
-      <File FileName="Assets\Script\Hitbox.cs" Line="9" Column="36" />
+      <File FileName="Assets\Script\Hitbox.cs" Line="12" Column="4" />
       <File FileName="Assets\Script\Arrow.cs" Line="22" Column="16" />
-      <File FileName="Assets\Script\GameController.cs" Line="15" Column="3" />
+      <File FileName="Assets\Script\GameController.cs" Line="9" Column="2" />
       <File FileName="Assets\Script\Lives.cs" Line="8" Column="50" />
+      <File FileName="Assets\Script\DEBUG.cs" Line="7" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

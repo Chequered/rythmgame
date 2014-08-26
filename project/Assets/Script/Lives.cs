@@ -8,7 +8,8 @@ public class Lives : MonoBehaviour {
 		this.guiText.text = text + GameController.lives;
 	}
 
-	public static void UpdateLives(int change){
-
+	public void UpdateLives(int change){
+		GameController.lives -= change;
+		this.guiText.text = text + GameController.lives;
 	}
 }
