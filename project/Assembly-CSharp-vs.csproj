@@ -39,19 +39,29 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/ProgramFiles/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/ProgramFiles/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\Arrow.cs" />
+     <Compile Include="Assets\Script\CharacterContoller.cs" />
      <Compile Include="Assets\Script\DEBUG.cs" />
+     <Compile Include="Assets\Script\GUI\DeadScreenGUI\LoseScreen.cs" />
+     <Compile Include="Assets\Script\GUI\DeadScreenGUI\MenuButton.cs" />
+     <Compile Include="Assets\Script\GUI\DeadScreenGUI\RestartButton.cs" />
+     <Compile Include="Assets\Script\GUI\InGameGUI\AllGUITexts.cs" />
+     <Compile Include="Assets\Script\GUI\StartScreenGUI\CreditsButton.cs" />
+     <Compile Include="Assets\Script\GUI\StartScreenGUI\CreditsScreenCommands.cs" />
+     <Compile Include="Assets\Script\GUI\StartScreenGUI\ExitCreditsButton.cs" />
+     <Compile Include="Assets\Script\GUI\StartScreenGUI\StartButton.cs" />
      <Compile Include="Assets\Script\GameController.cs" />
      <Compile Include="Assets\Script\Hitbox.cs" />
      <Compile Include="Assets\Script\Lives.cs" />
      <Compile Include="Assets\Script\Score.cs" />
+     <None Include="Assets\Font\pizzadudedotdk.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
