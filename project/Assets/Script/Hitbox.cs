@@ -10,6 +10,7 @@ public class Hitbox : MonoBehaviour {
 	public GameObject debugText; //de text van de richting van de pijl in de hitbox
 	public GameObject GameController; //de Gamecontroller
 	public GameObject light;
+	public GameObject particleSystem;
 
 	private void OnTriggerEnter2D(Collider2D col){ //een collider in de hitbox komt
 		if(col.transform.tag == "Arrow"){ //checkt of de collider een arrow is.
@@ -74,7 +75,7 @@ public class Hitbox : MonoBehaviour {
 		hadOne = true; //reset the boolean
 		arrowsInHitBox.Remove(arrow); //haal de arrow uit de array
 		Destroy(arrow.gameObject); //Vernietig de arrow
-		particleSystem.Emit(50); //emit een paar particles
+		particleSystem.GetComponent<ParticleSystem>().Emit(50); //emit een paar particles
 	}
 
 	private void OnTriggerExit2D(Collider2D col){

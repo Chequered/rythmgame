@@ -10,6 +10,9 @@ public class Lives : MonoBehaviour {
 
 	public void UpdateLives(int change){
 		GameController.lives -= change;
+		if(GameController.lives < 0){
+			GameController.status = true;
+		}
 		this.guiText.text = text + GameController.lives;
 	}
 }
