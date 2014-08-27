@@ -46,7 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\Arrow.cs" />
+     <Compile Include="Assets\Script\ArrowSpawner.cs" />
      <Compile Include="Assets\Script\BackgroundScript.cs" />
+     <Compile Include="Assets\Script\GameController.cs" />
+     <Compile Include="Assets\Script\Hitbox.cs" />
+     <Compile Include="Assets\Script\Lives.cs" />
+     <Compile Include="Assets\Script\PlayerController.cs" />
+     <Compile Include="Assets\Script\Score.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
