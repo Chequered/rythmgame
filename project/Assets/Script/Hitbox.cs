@@ -9,15 +9,20 @@ public class Hitbox : MonoBehaviour {
 
 	public GameObject debugText; //de text van de richting van de pijl in de hitbox
 	public GameObject GameController; //de Gamecontroller
+	public GameObject light;
 
 	private void OnTriggerEnter2D(Collider2D col){ //een collider in de hitbox komt
 		if(col.transform.tag == "Arrow"){ //checkt of de collider een arrow is.
 			arrowsInHitBox.Add(col.gameObject); //voegt hem toe aan de lijst met arrows die nu in de hitbox zitten.
 		}
+		light.light.enabled = true;
 	}
 
 	private void Update(){
 		GetInput(); //Input van keyboard
+		if(arrowsInHitBox.Count <= 0){
+			light.light.enabled = false;
+		}
 	}
 
 	private bool hadOne;//een boolean die aangeeft of er een arrow goed was tijdens een foreach loop
@@ -32,7 +37,7 @@ public class Hitbox : MonoBehaviour {
 				GameController.GetComponent<GameController>().OnAction(false);//process hem dan
 			}hadOne = false;//reset de boolean
 		}
-		if(Input.GetKeyDown(KeyCode.RightArrow)){//als je de right arrow indrukt
+		else if(Input.GetKeyDown(KeyCode.RightArrow)){//als je de right arrow indrukt
 			foreach(GameObject arrow in arrowsInHitBox){
 				if(arrow.GetComponent<Arrow>().Direction == "right"){
 					ProcessArrow(arrow);
@@ -42,7 +47,7 @@ public class Hitbox : MonoBehaviour {
 				GameController.GetComponent<GameController>().OnAction(false);
 			}hadOne = false;
 		}
-		if(Input.GetKeyDown(KeyCode.DownArrow)){//als je de down arrow indrukt
+		else if(Input.GetKeyDown(KeyCode.DownArrow)){//als je de down arrow indrukt
 			foreach(GameObject arrow in arrowsInHitBox){
 				if(arrow.GetComponent<Arrow>().Direction == "down"){
 					ProcessArrow(arrow);
@@ -52,7 +57,7 @@ public class Hitbox : MonoBehaviour {
 				GameController.GetComponent<GameController>().OnAction(false);
 			}hadOne = false;
 		}
-		if(Input.GetKeyDown(KeyCode.LeftArrow)){//als je de left arrow indrukt
+		else if(Input.GetKeyDown(KeyCode.LeftArrow)){//als je de left arrow indrukt
 			foreach(GameObject arrow in arrowsInHitBox){
 				if(arrow.GetComponent<Arrow>().Direction == "left"){
 					ProcessArrow(arrow);
@@ -65,7 +70,7 @@ public class Hitbox : MonoBehaviour {
 	}
 
 	private void ProcessArrow(GameObject arrow){
-		GameController.GetComponent<GameController>().OnAction(true); //process de arrow
+		GameController.GetComponent<GameController>().OnAction(true, this.transform.position.x, arrow.transform.position.x); //process de arrow
 		hadOne = true; //reset the boolean
 		arrowsInHitBox.Remove(arrow); //haal de arrow uit de array
 		Destroy(arrow.gameObject); //Vernietig de arrow
