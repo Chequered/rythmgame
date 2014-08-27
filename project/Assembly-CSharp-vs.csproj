@@ -47,9 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\Arrow.cs" />
-<<<<<<< HEAD
+     <Compile Include="Assets\Script\ArrowSpawner.cs" />
+     <Compile Include="Assets\Script\BackgroundScript.cs" />
      <Compile Include="Assets\Script\CharacterContoller.cs" />
-     <Compile Include="Assets\Script\DEBUG.cs" />
      <Compile Include="Assets\Script\GUI\DeadScreenGUI\LoseScreen.cs" />
      <Compile Include="Assets\Script\GUI\DeadScreenGUI\MenuButton.cs" />
      <Compile Include="Assets\Script\GUI\DeadScreenGUI\RestartButton.cs" />
@@ -58,21 +58,14 @@
      <Compile Include="Assets\Script\GUI\StartScreenGUI\CreditsScreenCommands.cs" />
      <Compile Include="Assets\Script\GUI\StartScreenGUI\ExitCreditsButton.cs" />
      <Compile Include="Assets\Script\GUI\StartScreenGUI\StartButton.cs" />
-=======
-     <Compile Include="Assets\Script\ArrowSpawner.cs" />
-     <Compile Include="Assets\Script\BackgroundScript.cs" />
->>>>>>> origin/master
      <Compile Include="Assets\Script\GameController.cs" />
      <Compile Include="Assets\Script\Hitbox.cs" />
      <Compile Include="Assets\Script\Lives.cs" />
      <Compile Include="Assets\Script\ParticleSortingLayer.cs" />
      <Compile Include="Assets\Script\PlayerController.cs" />
      <Compile Include="Assets\Script\Score.cs" />
-<<<<<<< HEAD
-     <None Include="Assets\Font\pizzadudedotdk.txt" />
-=======
      <Compile Include="Assets\Script\ScoreSubmit.cs" />
->>>>>>> origin/master
+     <None Include="Assets\Font\pizzadudedotdk.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

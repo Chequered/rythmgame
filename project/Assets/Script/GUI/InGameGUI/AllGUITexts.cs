@@ -10,7 +10,7 @@ public class AllGUITexts : MonoBehaviour {
 
 	public void UpdateScoreOrLives(){
 		totalLives = GameController.lives;
-		totalScore = Score.score;
+		//totalScore = Score.score;
 		GUILives.text = "Lives: " + totalLives;
 		GUIScore.text = "Score: " + totalScore;
 	}
