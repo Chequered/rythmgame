@@ -1,4 +1,12 @@
 ﻿<Properties>
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BackgroundScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\BackgroundScript.cs" Line="19" Column="3" />
+      <File FileName="Assets\Scripts\BackgroundScript.cs" Line="21" Column="1" />
+      <File FileName="Assets\Scripts\CloudScript.cs" Line="1" Column="1" />
+=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Hitbox.cs">
     <Files>
@@ -8,6 +16,7 @@
       <File FileName="Assets\Script\Lives.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Score.cs" Line="11" Column="19" />
       <File FileName="Assets\Script\ArrowSpawner.cs" Line="16" Column="43" />
+>>>>>>> a56b7875746c67c5c5dd75910944e9ce034a31e2
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
