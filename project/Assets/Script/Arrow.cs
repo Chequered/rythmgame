@@ -21,11 +21,12 @@ public class Arrow : MonoBehaviour {
 		}
 	}
 
-	Vector2 pos;
+	Vector3 pos;
 	private void Update(){
 		pos.y = this.transform.position.y;
 		pos.x = this.transform.position.x;
 		pos.x -= arrowSpeed;
+		pos.z = transform.position.z;
 		this.transform.position = pos;
 	}
 
