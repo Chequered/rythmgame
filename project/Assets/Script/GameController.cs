@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
 
 	public static int lives;
 	public static float globalArrowSpeed;
+	public static bool status;
 
 	private void Awake(){
 		lives = startingHealth;

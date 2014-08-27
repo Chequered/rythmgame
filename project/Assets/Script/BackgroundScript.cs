@@ -8,13 +8,14 @@ public class BackgroundScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		offset += scrollSpeed;
-		renderer.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));
-		if (offset >= 1) 
-		{
-			Debug.Log(offset);
-			offset = -1;
+		if(!GameController.status){
+			offset += scrollSpeed;
 			renderer.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));
+			if (offset >= 1) 
+			{
+				offset = -1;
+				renderer.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));
+			}
 		}
 	}
 }
