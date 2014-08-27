@@ -4,7 +4,10 @@ using System.Collections;
 public class Arrow : MonoBehaviour {
 
 	public string direction;
+	public GameObject buildingPrefab;
+
 	private float arrowSpeed;
+	private GameObject associatedBuilding;
 
 	private void Start(){
 		arrowSpeed = GameController.globalArrowSpeed;
@@ -19,6 +22,17 @@ public class Arrow : MonoBehaviour {
 		}else if(stance == 3){
 			direction = "down";
 		}
+
+		Vector3 pos = new Vector3(transform.position.x, transform.position.y + 2, -1.5f);
+		if(direction == "right"){
+			pos.x += 3;
+		}else if(direction == "left"){
+			pos.x -= 3;
+		}
+		GameObject building = GameObject.Instantiate(buildingPrefab, pos, Quaternion.identity) as GameObject;
+		building.gameObject.name = "Building";
+		building.transform.parent = this.transform;
+		associatedBuilding = building;
 	}
 
 	Vector3 pos;
@@ -32,6 +46,10 @@ public class Arrow : MonoBehaviour {
 		}
 	}
 
+	public void Explode(){
+		associatedBuilding.GetComponent<Building>().Explode();
+		Destroy(this.gameObject);
+	}
 
 	public string Direction {
 		get {

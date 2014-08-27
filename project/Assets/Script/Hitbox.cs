@@ -74,7 +74,7 @@ public class Hitbox : MonoBehaviour {
 		GameController.GetComponent<GameController>().OnAction(true, this.transform.position.x, arrow.transform.position.x); //process de arrow
 		hadOne = true; //reset the boolean
 		arrowsInHitBox.Remove(arrow); //haal de arrow uit de array
-		Destroy(arrow.gameObject); //Vernietig de arrow
+		arrow.GetComponent<Arrow>().Explode(); //Vernietig de arrow en laat het gebouw exploderen.
 		particleSystem.GetComponent<ParticleSystem>().Emit(50); //emit een paar particles
 	}
 

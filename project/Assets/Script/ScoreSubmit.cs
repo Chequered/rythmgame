@@ -7,7 +7,7 @@ public class ScoreSubmit : MonoBehaviour {
 	
 	void OnGUI() {
 		if(GameController.status){
-			GUI.TextArea(new Rect(230, 50, 240, 180), "Submit your score!");
+			GUI.TextArea(new Rect(230, 50, 240, 180), "        Game Over!                                               Submit your score!");
 			playerName = GUI.TextField(new Rect(250, 110, 200, 20), playerName, 25);
 			if (GUI.Button(new Rect(250, 170, 50, 30), "Submit")){
 				StartCoroutine(PostScores(playerName, (int) Score.globalScore));

@@ -27,9 +27,7 @@ public class GameController : MonoBehaviour {
 		}else{
 			distance = distance *- Random.Range(22, 25);
 		}
-		Debug.Log (distance);
 		score = bonusPoints - distance;
-		Debug.Log (score);
 		scoreText.GetComponent<Score>().UpdateScore(correctButton,(int) score);
 		if(!correctButton){
 			livesText.GetComponent<Lives>().UpdateLives(1);

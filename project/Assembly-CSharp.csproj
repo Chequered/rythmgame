@@ -49,6 +49,8 @@
      <Compile Include="Assets\Script\Arrow.cs" />
      <Compile Include="Assets\Script\ArrowSpawner.cs" />
      <Compile Include="Assets\Script\BackgroundScript.cs" />
+     <Compile Include="Assets\Script\Building.cs" />
+     <Compile Include="Assets\Script\ExplosionAnim.cs" />
      <Compile Include="Assets\Script\GameController.cs" />
      <Compile Include="Assets\Script\Hitbox.cs" />
      <Compile Include="Assets\Script\Lives.cs" />

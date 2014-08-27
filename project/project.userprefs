@@ -1,14 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Hitbox.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Building.cs">
     <Files>
       <File FileName="Assets\Script\Hitbox.cs" Line="71" Column="3" />
-      <File FileName="Assets\Script\Arrow.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Arrow.cs" Line="31" Column="4" />
+      <File FileName="Assets\Script\GameController.cs" Line="30" Column="34" />
       <File FileName="Assets\Script\Lives.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Score.cs" Line="11" Column="26" />
+      <File FileName="Assets\Script\Score.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\ArrowSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\ParticleSortingLayer.cs" Line="7" Column="3" />
+      <File FileName="Assets\Script\ScoreSubmit.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\BackgroundScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Building.cs" Line="10" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
