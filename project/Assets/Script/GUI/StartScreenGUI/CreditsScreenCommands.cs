@@ -3,28 +3,33 @@ using System.Collections;
 
 public class CreditsScreenCommands : MonoBehaviour {
 
-	float relativeForce = 0.2f;
-	public void GoCredits()
+	float relativeForce = 0.1f;
+	float screenPos;
+	public void GoCredits()	
 	{
 		StartCoroutine(CreditsButtonPushed());
 	}
-	IEnumerator CreditsButtonPushed(){
-		Debug.Log("something is happening");
-		if(transform.position.x <= -0.2f)
+	IEnumerator CreditsButtonPushed()
+	{
+		screenPos = transform.position.x;
+		if(screenPos < 0)
 		{
 			transform.position += new Vector3(relativeForce, 0, 0);
-			yield return new WaitForSeconds(0.00002f);
+			yield return new WaitForSeconds(0.01f);
 			StartCoroutine(CreditsButtonPushed());
 		}
 	}
-	public void ExitCredits(){
+	public void ExitCredits()	
+	{
 		StartCoroutine(ExitCreditsButtonPushed());
 	}
-	IEnumerator ExitCreditsButtonPushed(){
-		if(transform.position.x >= -15f)
+	IEnumerator ExitCreditsButtonPushed()
+	{
+		screenPos = this.transform.position.x;
+		if(screenPos > -2)
 		{
 			transform.position -= new Vector3(relativeForce, 0, 0);
-			yield return new WaitForSeconds(0.00002f);
+			yield return new WaitForSeconds(0.01f);
 			StartCoroutine(ExitCreditsButtonPushed());
 		}
 	}
