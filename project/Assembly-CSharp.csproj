@@ -49,8 +49,11 @@
      <Compile Include="Assets\Script\Arrow.cs" />
      <Compile Include="Assets\Script\ArrowSpawner.cs" />
      <Compile Include="Assets\Script\BackgroundScript.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Script\Building.cs" />
      <Compile Include="Assets\Script\ExplosionAnim.cs" />
+=======
+>>>>>>> a5cb37aefc1016299c0a0f2824b4b2171a3a3cd6
      <Compile Include="Assets\Script\GUI\DeadScreenGUI\LoseScreen.cs" />
      <Compile Include="Assets\Script\GUI\DeadScreenGUI\MenuButton.cs" />
      <Compile Include="Assets\Script\GUI\DeadScreenGUI\RestartButton.cs" />
