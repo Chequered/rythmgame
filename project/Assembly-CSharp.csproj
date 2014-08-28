@@ -39,21 +39,18 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/ProgramFiles/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/ProgramFiles/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\Arrow.cs" />
      <Compile Include="Assets\Script\ArrowSpawner.cs" />
      <Compile Include="Assets\Script\BackgroundScript.cs" />
-<<<<<<< HEAD
      <Compile Include="Assets\Script\Building.cs" />
      <Compile Include="Assets\Script\ExplosionAnim.cs" />
-=======
-     <Compile Include="Assets\Script\CharacterContoller.cs" />
      <Compile Include="Assets\Script\GUI\DeadScreenGUI\LoseScreen.cs" />
      <Compile Include="Assets\Script\GUI\DeadScreenGUI\MenuButton.cs" />
      <Compile Include="Assets\Script\GUI\DeadScreenGUI\RestartButton.cs" />
@@ -62,7 +59,6 @@
      <Compile Include="Assets\Script\GUI\StartScreenGUI\CreditsScreenCommands.cs" />
      <Compile Include="Assets\Script\GUI\StartScreenGUI\ExitCreditsButton.cs" />
      <Compile Include="Assets\Script\GUI\StartScreenGUI\StartButton.cs" />
->>>>>>> fa2bc613161ee4cd65286b0dbe979dcb0ec664c6
      <Compile Include="Assets\Script\GameController.cs" />
      <Compile Include="Assets\Script\Hitbox.cs" />
      <Compile Include="Assets\Script\Lives.cs" />
