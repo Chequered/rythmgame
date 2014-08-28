@@ -1,26 +1,19 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\ScoreSubmit.cs">
-    <Files>
-      <File FileName="Assets\Script\Hitbox.cs" Line="80" Column="16" />
-      <File FileName="Assets\Script\Arrow.cs" Line="52" Column="3" />
-      <File FileName="Assets\Script\GameController.cs" Line="30" Column="34" />
-      <File FileName="Assets\Script\Lives.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Score.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\ArrowSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\ScoreSubmit.cs" Line="12" Column="43" />
-      <File FileName="Assets\Script\BackgroundScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Building.cs" Line="11" Column="28" />
-      <File FileName="Assets\Script\ExplosionAnim.cs" Line="9" Column="33" />
-      <File FileName="Assets\Script\ParticleSortingLayer.cs" Line="8" Column="1" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Arrow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Hitbox.cs">
     <Files>
-      <File FileName="Assets\Script\Arrow.cs" Line="50" Column="1" />
-      <File FileName="Assets\Script\Arrow.cs" Line="1" Column="1" />
->>>>>>> a5cb37aefc1016299c0a0f2824b4b2171a3a3cd6
+      <File FileName="Assets\Script\Hitbox.cs" Line="40" Column="22" />
+      <File FileName="Assets\Script\GUI\StartScreenGUI\ExitCreditsButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GUI\StartScreenGUI\CreditsButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GUI\StartScreenGUI\CreditsScreenCommands.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GUI\InGameGUI\AllGUITexts.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Score.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Lives.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GUI\DeadScreenGUI\RestartButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GUI\StartScreenGUI\StartButton.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\Tower-defence\Assets\Scripts\ShootingTower.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\ArrowSpawner.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
