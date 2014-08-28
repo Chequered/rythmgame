@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: 4b1f0a30833c975438e78ac40350936f
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: Aap, loop anim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 532
+        width: 348
+        height: 492
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 536
+        width: 344
+        height: 488
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 536
+        width: 340
+        height: 488
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 536
+        width: 336
+        height: 488
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_4
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 536
+        width: 340
+        height: 488
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_5
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 536
+        width: 340
+        height: 484
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_6
+      rect:
+        serializedVersion: 2
+        x: 2392
+        y: 536
+        width: 336
+        height: 484
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_7
+      rect:
+        serializedVersion: 2
+        x: 2788
+        y: 536
+        width: 336
+        height: 484
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_8
+      rect:
+        serializedVersion: 2
+        x: 3184
+        y: 536
+        width: 340
+        height: 484
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_9
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 536
+        width: 340
+        height: 484
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_10
+      rect:
+        serializedVersion: 2
+        x: 3980
+        y: 536
+        width: 336
+        height: 484
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_11
+      rect:
+        serializedVersion: 2
+        x: 4376
+        y: 536
+        width: 336
+        height: 480
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_12
+      rect:
+        serializedVersion: 2
+        x: 4772
+        y: 536
+        width: 340
+        height: 480
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_13
+      rect:
+        serializedVersion: 2
+        x: 5168
+        y: 536
+        width: 340
+        height: 480
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_14
+      rect:
+        serializedVersion: 2
+        x: 5568
+        y: 536
+        width: 336
+        height: 480
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_15
+      rect:
+        serializedVersion: 2
+        x: 5964
+        y: 536
+        width: 336
+        height: 480
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_16
+      rect:
+        serializedVersion: 2
+        x: 6360
+        y: 536
+        width: 340
+        height: 480
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_17
+      rect:
+        serializedVersion: 2
+        x: 6756
+        y: 536
+        width: 356
+        height: 480
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_18
+      rect:
+        serializedVersion: 2
+        x: 7156
+        y: 536
+        width: 372
+        height: 480
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_19
+      rect:
+        serializedVersion: 2
+        x: 7552
+        y: 536
+        width: 388
+        height: 484
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_20
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 44
+        width: 384
+        height: 484
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_21
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 44
+        width: 376
+        height: 484
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_22
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 44
+        width: 364
+        height: 484
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_23
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 44
+        width: 356
+        height: 488
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_24
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 44
+        width: 348
+        height: 488
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_25
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 40
+        width: 344
+        height: 492
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_26
+      rect:
+        serializedVersion: 2
+        x: 2392
+        y: 40
+        width: 336
+        height: 492
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_27
+      rect:
+        serializedVersion: 2
+        x: 2788
+        y: 40
+        width: 336
+        height: 492
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_28
+      rect:
+        serializedVersion: 2
+        x: 3180
+        y: 40
+        width: 344
+        height: 492
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: Aap, loop anim_29
+      rect:
+        serializedVersion: 2
+        x: 3572
+        y: 40
+        width: 348
+        height: 492
+      alignment: 7
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
