@@ -7,16 +7,13 @@ public class ArrowSpawner : MonoBehaviour {
 	public GameObject hitBox;
 	public GameObject Arrow;
 
-	private int arrows;
-
 	private void Start(){
-		arrows = spawnPoints.Length;
 		Vector3 pos = new Vector3(0, 0, -2.5f);
 		for(int i = 0; i < spawnPoints.Length; i ++){
 			pos.x = hitBox.transform.position.x + 3 + spawnPoints[i];
 			pos.y = hitBox.transform.position.y;
 			pos.z = hitBox.transform.position.z;
-			GameObject arrow = Instantiate(Arrow, pos, Quaternion.identity) as GameObject;
+			Instantiate(Arrow, pos, Quaternion.identity);
 		}
 	}
 }

@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: b34e842597ab9eb47b9d5649aa6b601b
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - GUILives: {fileID: 13200000, guid: 8a20bff26817e1143acc6aa532fb4ab4, type: 2}
+  - GUIScore: {fileID: 13200002, guid: 8a20bff26817e1143acc6aa532fb4ab4, type: 2}
+  - mainCamera: {fileID: 100000, guid: bb827a33512a7eb40bd46fd29ed4f9c5, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

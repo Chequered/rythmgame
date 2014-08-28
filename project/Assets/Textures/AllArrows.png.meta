@@ -1,0 +1,130 @@
+fileFormatVersion: 2
+guid: 9c5cdd006ad5b6540bc6a625a8ac1d63
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: AllArrows_0
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 490
+        width: 328
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: AllArrows_1
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 494
+        width: 166
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: AllArrows_7
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 214
+        width: 328
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: AllArrows_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 219
+        width: 167
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: AllArrows_9
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 86
+        width: 329
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: AllArrows_10
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 218
+        width: 165
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: AllArrows_11
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 84
+        width: 327
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: AllArrows_12
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 79
+        width: 167
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: AllArrows_13
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 83
+        width: 165
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

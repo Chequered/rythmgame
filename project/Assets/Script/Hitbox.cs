@@ -7,10 +7,12 @@ public class Hitbox : MonoBehaviour {
 	private string directionPressed; //richting van de pijl die ingedrukt is
 	private List<GameObject> arrowsInHitBox = new List<GameObject>();
 
+	public Texture[] danceMoves; //de stances van de groovy monkey
 	public GameObject debugText; //de text van de richting van de pijl in de hitbox
 	public GameObject GameController; //de Gamecontroller
 	public GameObject light;
 	public GameObject particleSystem;
+	public GameObject player;
 
 	private void OnTriggerEnter2D(Collider2D col){ //een collider in de hitbox komt
 		if(col.transform.tag == "Arrow"){ //checkt of de collider een arrow is.
@@ -32,6 +34,7 @@ public class Hitbox : MonoBehaviour {
 			foreach(GameObject arrow in arrowsInHitBox){//een loop die de directie van elke arrow vergelijkt met de knop die ingedrukt word.
 				if(arrow.GetComponent<Arrow>().Direction == "up"){ //als de richting klopt met de knop
 					ProcessArrow(arrow);//do er dan iets meer
+					Dance (0);
 				}
 			}
 			if(!hadOne){//als er geen arrow goed was (dus als je de verkeerde knop hebt ingedrukt)
@@ -42,6 +45,7 @@ public class Hitbox : MonoBehaviour {
 			foreach(GameObject arrow in arrowsInHitBox){
 				if(arrow.GetComponent<Arrow>().Direction == "right"){
 					ProcessArrow(arrow);
+					Dance (1);
 				}
 			}
 			if(!hadOne){
@@ -52,6 +56,7 @@ public class Hitbox : MonoBehaviour {
 			foreach(GameObject arrow in arrowsInHitBox){
 				if(arrow.GetComponent<Arrow>().Direction == "down"){
 					ProcessArrow(arrow);
+					Dance (2);
 				}
 			}
 			if(!hadOne){
@@ -62,6 +67,7 @@ public class Hitbox : MonoBehaviour {
 			foreach(GameObject arrow in arrowsInHitBox){
 				if(arrow.GetComponent<Arrow>().Direction == "left"){
 					ProcessArrow(arrow);
+					Dance (3);
 				}
 			}
 			if(!hadOne){
@@ -70,11 +76,16 @@ public class Hitbox : MonoBehaviour {
 		}
 	}
 
+	private void Dance(int move){
+		audio.Play();
+		player.renderer.material.SetTexture("_MainTex", danceMoves[move]);
+	}
+
 	private void ProcessArrow(GameObject arrow){
 		GameController.GetComponent<GameController>().OnAction(true, this.transform.position.x, arrow.transform.position.x); //process de arrow
 		hadOne = true; //reset the boolean
 		arrowsInHitBox.Remove(arrow); //haal de arrow uit de array
-		Destroy(arrow.gameObject); //Vernietig de arrow
+		arrow.GetComponent<Arrow>().Explode(); //Vernietig de arrow en laat het gebouw exploderen.
 		particleSystem.GetComponent<ParticleSystem>().Emit(50); //emit een paar particles
 	}
 
