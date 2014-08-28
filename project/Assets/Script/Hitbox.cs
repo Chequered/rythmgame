@@ -7,7 +7,7 @@ public class Hitbox : MonoBehaviour {
 	private string directionPressed; //richting van de pijl die ingedrukt is
 	private List<GameObject> arrowsInHitBox = new List<GameObject>();
 
-	public Texture[] danceMoves; //de stances van de groovy monkey
+	public Sprite[] danceMoves; //de stances van de groovy monkey
 	public GameObject debugText; //de text van de richting van de pijl in de hitbox
 	public GameObject GameController; //de Gamecontroller
 	public GameObject light;
@@ -78,7 +78,7 @@ public class Hitbox : MonoBehaviour {
 
 	private void Dance(int move){
 		audio.Play();
-		player.renderer.material.SetTexture("_MainTex", danceMoves[move]);
+		player.GetComponent<SpriteRenderer>().sprite = danceMoves[move];
 	}
 
 	private void ProcessArrow(GameObject arrow){
