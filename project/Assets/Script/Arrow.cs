@@ -25,9 +25,9 @@ public class Arrow : MonoBehaviour {
 
 		Vector3 pos = new Vector3(transform.position.x, transform.position.y + 2, -1.5f);
 		if(direction == "right"){
-			pos.x += 3;
+			pos.x += 1.5f;
 		}else if(direction == "left"){
-			pos.x -= 3;
+			pos.x -= 1.5f;
 		}
 		GameObject building = GameObject.Instantiate(buildingPrefab, pos, Quaternion.identity) as GameObject;
 		building.gameObject.name = "Building";
