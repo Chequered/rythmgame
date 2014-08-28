@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Building.cs">
     <Files>
@@ -11,6 +12,17 @@
       <File FileName="Assets\Script\ScoreSubmit.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\BackgroundScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Building.cs" Line="10" Column="46" />
+=======
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\GUI\StartScreenGUI\CreditsButton.cs">
+    <Files>
+      <File FileName="Assets\Script\GUI\StartScreenGUI\StartButton.cs" Line="20" Column="29" />
+      <File FileName="Assets\Script\GUI\StartScreenGUI\CreditsScreenCommands.cs" Line="20" Column="8" />
+      <File FileName="Assets\Script\GUI\StartScreenGUI\CreditsButton.cs" Line="12" Column="21" />
+      <File FileName="Assets\Script\GUI\StartScreenGUI\ExitCreditsButton.cs" Line="24" Column="63" />
+      <File FileName="Assets\Script\GameController.cs" Line="22" Column="43" />
+      <File FileName="Assets\Script\Score.cs" Line="1" Column="1" />
+>>>>>>> fa2bc613161ee4cd65286b0dbe979dcb0ec664c6
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
