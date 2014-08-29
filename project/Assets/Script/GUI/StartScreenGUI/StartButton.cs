@@ -10,7 +10,6 @@ public class StartButton : MonoBehaviour {
 	public Texture2D button1;
 	public Texture2D button2;
 	public GameObject creditsGUI;
-	public GameObject allRelativeComponents;
 	void OnMouseDown(){
 		guiTexture.texture = button2;
 	}
@@ -23,7 +22,6 @@ public class StartButton : MonoBehaviour {
 		guiTexture.texture = button1;
 	}
 	public void ButtonPushed(){
-		Instantiate(allRelativeComponents, new Vector3(0, 0, 0), Quaternion.identity);
 		creditsGUI.GetComponent<CreditsScreenCommands>().StartGame();
 	}
 }

@@ -2,7 +2,8 @@ fileFormatVersion: 2
 guid: a32ea9cb90345844db76fc1aa8ee8e14
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - loseScreenGUI: {fileID: 100006, guid: 26ed170718bd58d49b2a18f00cc9f5ca, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
