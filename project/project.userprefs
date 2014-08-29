@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Hitbox.cs">
     <Files>
@@ -14,6 +15,23 @@
       <File FileName="Assets\Script\Building.cs" Line="14" Column="1" />
       <File FileName="Assets\Script\ExplosionAnim.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\ParticleSortingLayer.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Hitbox.cs">
+    <Files>
+      <File FileName="Assets\Script\Hitbox.cs" Line="40" Column="22" />
+      <File FileName="Assets\Script\GUI\StartScreenGUI\ExitCreditsButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GUI\StartScreenGUI\CreditsButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GUI\StartScreenGUI\CreditsScreenCommands.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GUI\InGameGUI\AllGUITexts.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Score.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Lives.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GUI\DeadScreenGUI\RestartButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GUI\StartScreenGUI\StartButton.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\Tower-defence\Assets\Scripts\ShootingTower.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\ArrowSpawner.cs" Line="1" Column="1" />
+>>>>>>> cb2480712e64aab3e2e74bb29bf4a7363113a544
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

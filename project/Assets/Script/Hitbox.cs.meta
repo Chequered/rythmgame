@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: 49e39e62741d6ac489574ef0441fb08e
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - debugText: {instanceID: 0}
+  - GameController: {fileID: 100000, guid: cee99b21925829e40ae516993adbfb36, type: 2}
+  - light: {fileID: 100000, guid: 0b53e3eec5d02054594b5306daaa9c8d, type: 2}
+  - particleSystem: {fileID: 100000, guid: 9b3edf8c7c08bb04e9fd53647c3320aa, type: 2}
+  - player: {fileID: 100000, guid: 303ce29d5f03c0748a3ebdc8c1b77847, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

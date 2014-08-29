@@ -2,10 +2,9 @@
 using System.Collections;
 
 public class Lives : MonoBehaviour {
-	public string text;
 
 	private void Start(){
-		this.guiText.text = text + GameController.lives;
+		this.guiText.text = "Lives: " + GameController.lives;
 	}
 
 	public void UpdateLives(int change){
@@ -13,6 +12,6 @@ public class Lives : MonoBehaviour {
 		if(GameController.lives < 0){
 			GameController.status = true;
 		}
-		this.guiText.text = text + GameController.lives;
+		guiText.text = "Lives: " + GameController.lives;
 	}
 }
