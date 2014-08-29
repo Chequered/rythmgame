@@ -27,7 +27,9 @@ public class ScoreSubmit : MonoBehaviour {
 		
 		WWW hs_post = new WWW(post_url);
 		yield return hs_post; 
-		
+
+		Application.LoadLevel(0);
+
 		if (hs_post.error != null)
 		{
 			print("There was an error posting the high score: " + hs_post.error);
