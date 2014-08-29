@@ -17,7 +17,7 @@ public class ScoreSubmit : MonoBehaviour {
 
 	public static IEnumerator PostScores(string name, int score)
 	{
-		string post_url = "daanruiter.net/gamejam_disco_submit.php?" + "NAME=" + name + "&SCORE=" + score;
+		string post_url = "gamejam_disco_submit.php?" + "NAME=" + name + "&SCORE=" + score;
 		post_url = post_url.Replace(" ","_");
 		
 		WWW hs_post = new WWW(post_url);

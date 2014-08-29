@@ -5,6 +5,7 @@ public class Arrow : MonoBehaviour {
 
 	public string direction;
 	public GameObject buildingPrefab;
+	public int iD;
 
 	private float arrowSpeed;
 	private GameObject associatedBuilding;
@@ -48,7 +49,17 @@ public class Arrow : MonoBehaviour {
 
 	public void Explode(){
 		associatedBuilding.GetComponent<Building>().Explode();
+		Debug.Log ("Arrow: " + ID);
 		Destroy(this.gameObject);
+	}
+
+	public int ID {
+		get {
+			return iD;
+		}
+		set {
+			iD = value;
+		}
 	}
 
 	public string Direction {

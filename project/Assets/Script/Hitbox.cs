@@ -11,7 +11,7 @@ public class Hitbox : MonoBehaviour {
 	private Vector3 startPos;
 	private Vector3 dancePos;
 
-
+	public AudioClip[] sounds;
 	public Sprite[] danceMoves; //de stances van de groovy monkey
 	public GameObject gameControllerObj; //de Gamecontroller
 	public GameObject light;
@@ -22,7 +22,7 @@ public class Hitbox : MonoBehaviour {
 		startScale = new Vector3(4,4,0);
 		danceScale = new Vector3(2,2,0);
 		startPos = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
-		dancePos = new Vector3(-2.9f, -0.028f, -1.4f);
+		dancePos = new Vector3(player.transform.position.x, 3.5f, -1.4f);
 	}
 
 	private void OnTriggerEnter2D(Collider2D col){ //een collider in de hitbox komt
@@ -53,6 +53,7 @@ public class Hitbox : MonoBehaviour {
 			}
 			if(!hadOne){//als er geen arrow goed was (dus als je de verkeerde knop hebt ingedrukt)
 				gameControllerObj.GetComponent<GameController>().OnAction(false);//process hem dan
+				FallMonkeyFall();
 			}hadOne = false;//reset de boolean
 		}
 		else if(Input.GetKeyDown(KeyCode.RightArrow)){//als je de right arrow indrukt
@@ -64,6 +65,7 @@ public class Hitbox : MonoBehaviour {
 			}
 			if(!hadOne){
 				gameControllerObj.GetComponent<GameController>().OnAction(false);
+				FallMonkeyFall();
 			}hadOne = false;
 		}
 		else if(Input.GetKeyDown(KeyCode.DownArrow)){//als je de down arrow indrukt
@@ -75,6 +77,7 @@ public class Hitbox : MonoBehaviour {
 			}
 			if(!hadOne){
 				gameControllerObj.GetComponent<GameController>().OnAction(false);
+				FallMonkeyFall();
 			}hadOne = false;
 		}
 		else if(Input.GetKeyDown(KeyCode.LeftArrow)){//als je de left arrow indrukt
@@ -86,12 +89,13 @@ public class Hitbox : MonoBehaviour {
 			}
 			if(!hadOne){
 				gameControllerObj.GetComponent<GameController>().OnAction(false);
+				FallMonkeyFall();
 			}hadOne = false;
 		}
 	}
 
 	private void Dance(int move){
-		audio.Play();
+		audio.PlayOneShot(sounds[0]);
 		player.GetComponent<SpriteRenderer>().sprite = danceMoves[move];
 		player.GetComponent<Animator>().enabled = false;
 		player.transform.localScale = danceScale;
@@ -105,12 +109,17 @@ public class Hitbox : MonoBehaviour {
 		player.transform.position = startPos;
 	}
 
+	private void FallMonkeyFall(){
+		audio.PlayOneShot(sounds[1]);
+		Dance (4);
+	}
+
 	private void ProcessArrow(GameObject arrow){
 		gameControllerObj.GetComponent<GameController>().OnAction(true, this.transform.position.x, arrow.transform.position.x); //process de arrow
 		hadOne = true; //reset the boolean
-		arrowsInHitBox.Remove(arrow); //haal de arrow uit de array
 		arrow.GetComponent<Arrow>().Explode(); //Vernietig de arrow en laat het gebouw exploderen.
 		particleSystem.GetComponent<ParticleSystem>().Emit(50); //emit een paar particles
+		arrowsInHitBox.Remove(arrow); //haal de arrow uit de array
 	}
 
 	private void OnTriggerExit2D(Collider2D col){
