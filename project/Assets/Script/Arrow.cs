@@ -12,7 +12,7 @@ public class Arrow : MonoBehaviour {
 
 	private void Start(){
 		arrowSpeed = GameController.globalArrowSpeed;
-		int stance = (int)Random.Range(0,3);
+		int stance = (int)Random.Range(0,4);
 		transform.Rotate(new Vector3(0,0,stance * 90));
 		if (stance == 0){
 			direction = "right";
@@ -44,6 +44,10 @@ public class Arrow : MonoBehaviour {
 			pos.x -= arrowSpeed;
 			pos.z = transform.position.z;
 			this.transform.position = pos;
+			if(this.transform.position.x < -10){
+				Destroy(this.gameObject);
+				GameController.arrowsInGame.Remove(this.gameObject);
+			}
 		}
 	}
 

@@ -9,7 +9,7 @@ public class Lives : MonoBehaviour {
 
 	public void UpdateLives(int change){
 		GameController.lives -= change;
-		if(GameController.lives < 0){
+		if(GameController.lives == 0){
 			GameController.status = true;
 		}
 		guiText.text = "Lives: " + GameController.lives;
