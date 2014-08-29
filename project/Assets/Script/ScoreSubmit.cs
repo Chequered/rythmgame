@@ -7,14 +7,15 @@ public class ScoreSubmit : MonoBehaviour {
 	
 	void OnGUI() {
 		if(GameController.status){
-			if(GameController.lives == 0){
-				GUI.TextArea(new Rect(230, 50, 240, 180), "        Game Over!                                                You booggied yourself to death!                     Submit your score!");
-			}else{
-				GUI.TextArea(new Rect(230, 50, 240, 180), "        Game Over!                                                You destroyed the town with your grooy moves!               Submit your score!");
-			}
-			playerName = GUI.TextField(new Rect(250, 110, 200, 20), playerName, 25);
-			if (GUI.Button(new Rect(250, 170, 50, 40), "Submit")){
+
+			playerName = GUI.TextField(new Rect(30, 260, 200, 20), playerName, 25);
+			if (GUI.Button(new Rect(30, 320, 50, 40), "Submit")){
 				StartCoroutine(PostScores(playerName, (int) Score.globalScore));
+			}
+			if(GameController.lives == 0){
+				GUI.TextArea(new Rect(10, 200, 240, 180), "        Game Over!                                                You booggied yourself to death!                     Submit your score!");
+			}else{
+				GUI.TextArea(new Rect(10, 200, 240, 180), "        Game Over!                                                You destroyed the town with your grooy moves!               Submit your score!");
 			}
 		}
 	}
