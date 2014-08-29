@@ -1,27 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\ScoreSubmit.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Hitbox.cs">
     <Files>
-      <File FileName="project.sln" Line="71" Column="1" />
-      <File FileName="Assets\Script\Hitbox.cs" Line="47" Column="7" />
-      <File FileName="Assets\Script\GameController.cs" Line="20" Column="18" />
-      <File FileName="Assets\Script\Hitbox.cs" Line="131" Column="1" />
-      <File FileName="Assets\Script\Arrow.cs" Line="49" Column="55" />
-      <File FileName="Assets\Script\Lives.cs" Line="18" Column="1" />
+      <File FileName="Assets\Script\Hitbox.cs" Line="101" Column="42" />
+      <File FileName="Assets\Script\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Arrow.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Score.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\ArrowSpawner.cs" Line="21" Column="41" />
-      <File FileName="Assets\Script\ScoreSubmit.cs" Line="13" Column="171" />
+      <File FileName="Assets\Script\ArrowSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\ScoreSubmit.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\BackgroundScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Building.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\ExplosionAnim.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\ParticleSortingLayer.cs" Line="1" Column="1" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\GUI\StartScreenGUI\CreditsScreenCommands.cs">
-    <Files>
-      <File FileName="Assets\Script\GUI\StartScreenGUI\CreditsScreenCommands.cs" Line="38" Column="1" />
-      <File FileName="Assets\Script\ArrowSpawner.cs" Line="1" Column="1" />
->>>>>>> 4c03c0f62a7c311b911ed93a47e55f2d45247878
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
