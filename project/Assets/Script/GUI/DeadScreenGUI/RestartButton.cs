@@ -18,6 +18,7 @@ public class RestartButton : MonoBehaviour {
 		if(guiTexture.HitTest(mousepos))
 		{
 			Application.LoadLevel(0);
+			GameController.status = false;
 			creditsScreenCommands.GetComponent<CreditsScreenCommands>().StartGame();
 		}
 		guiTexture.texture = button1;
