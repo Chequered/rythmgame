@@ -15,7 +15,7 @@ public class MenuButton : MonoBehaviour {
 		Vector2 mousepos = Input.mousePosition;
 		if(guiTexture.HitTest(mousepos))
 		{
-			Application.LoadLevel("menu");
+			Application.LoadLevel(0);
 		}
 		guiTexture.texture = button1;
 	}
