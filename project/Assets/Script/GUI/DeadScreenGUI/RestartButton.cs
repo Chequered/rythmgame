@@ -15,7 +15,7 @@ public class RestartButton : MonoBehaviour {
 		Vector2 mousepos = Input.mousePosition;
 		if(guiTexture.HitTest(mousepos))
 		{
-			Application.LoadLevel(1);
+			Application.LoadLevel(0);
 		}
 		guiTexture.texture = button1;
 	}

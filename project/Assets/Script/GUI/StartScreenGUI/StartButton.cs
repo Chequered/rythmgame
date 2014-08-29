@@ -23,7 +23,7 @@ public class StartButton : MonoBehaviour {
 		guiTexture.texture = button1;
 	}
 	public void ButtonPushed(){
-		Instantiate(allRelativeComponents, new Vector3(0, 0, 0), Quaternion.identity);
+		allRelativeComponents.SetActive(true);
 		creditsGUI.GetComponent<CreditsScreenCommands>().StartGame();
 	}
 }

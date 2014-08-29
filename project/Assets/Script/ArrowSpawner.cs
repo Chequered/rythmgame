@@ -10,10 +10,14 @@ public class ArrowSpawner : MonoBehaviour {
 	private void Start(){
 		Vector3 pos = new Vector3(0, 0, -2.5f);
 		for(int i = 0; i < spawnPoints.Length; i ++){
-			pos.x = hitBox.transform.position.x + 3 + spawnPoints[i];
+			pos.x = hitBox.transform.position.x + spawnPoints[i];
+			if(pos.x > 0){
+				pos.x = pos.x + spawnPoints[i] * 5.33f;
+			}else
 			pos.y = hitBox.transform.position.y;
 			pos.z = hitBox.transform.position.z;
-			Instantiate(Arrow, pos, Quaternion.identity);
+			GameObject arrow = GameObject.Instantiate(Arrow, pos, Quaternion.identity) as GameObject;
+			arrow.GetComponent<Arrow>().ID = i;
 		}
 	}
 }

@@ -6,13 +6,24 @@ public class Hitbox : MonoBehaviour {
 
 	private string directionPressed; //richting van de pijl die ingedrukt is
 	private List<GameObject> arrowsInHitBox = new List<GameObject>();
+	private Vector3 startScale;
+	private Vector3 danceScale;
+	private Vector3 startPos;
+	private Vector3 dancePos;
 
+	public AudioClip[] sounds;
 	public Sprite[] danceMoves; //de stances van de groovy monkey
-	public GameObject debugText; //de text van de richting van de pijl in de hitbox
-	public GameObject GameController; //de Gamecontroller
+	public GameObject gameControllerObj; //de Gamecontroller
 	public GameObject light;
 	public GameObject particleSystem;
 	public GameObject player;
+
+	private void Start(){
+		startScale = new Vector3(4,4,0);
+		danceScale = new Vector3(2,2,0);
+		startPos = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+		dancePos = new Vector3(player.transform.position.x, 3.5f, -1.4f);
+	}
 
 	private void OnTriggerEnter2D(Collider2D col){ //een collider in de hitbox komt
 		if(col.transform.tag == "Arrow"){ //checkt of de collider een arrow is.
@@ -26,6 +37,9 @@ public class Hitbox : MonoBehaviour {
 		if(arrowsInHitBox.Count <= 0){
 			light.light.enabled = false;
 		}
+		if(GameController.status && player.GetComponent<Animator>().enabled){
+			player.GetComponent<Animator>().enabled = false;
+		}
 	}
 
 	private bool hadOne;//een boolean die aangeeft of er een arrow goed was tijdens een foreach loop
@@ -38,7 +52,8 @@ public class Hitbox : MonoBehaviour {
 				}
 			}
 			if(!hadOne){//als er geen arrow goed was (dus als je de verkeerde knop hebt ingedrukt)
-				GameController.GetComponent<GameController>().OnAction(false);//process hem dan
+				gameControllerObj.GetComponent<GameController>().OnAction(false);//process hem dan
+				FallMonkeyFall();
 			}hadOne = false;//reset de boolean
 		}
 		else if(Input.GetKeyDown(KeyCode.RightArrow)){//als je de right arrow indrukt
@@ -49,7 +64,8 @@ public class Hitbox : MonoBehaviour {
 				}
 			}
 			if(!hadOne){
-				GameController.GetComponent<GameController>().OnAction(false);
+				gameControllerObj.GetComponent<GameController>().OnAction(false);
+				FallMonkeyFall();
 			}hadOne = false;
 		}
 		else if(Input.GetKeyDown(KeyCode.DownArrow)){//als je de down arrow indrukt
@@ -60,7 +76,8 @@ public class Hitbox : MonoBehaviour {
 				}
 			}
 			if(!hadOne){
-				GameController.GetComponent<GameController>().OnAction(false);
+				gameControllerObj.GetComponent<GameController>().OnAction(false);
+				FallMonkeyFall();
 			}hadOne = false;
 		}
 		else if(Input.GetKeyDown(KeyCode.LeftArrow)){//als je de left arrow indrukt
@@ -71,22 +88,38 @@ public class Hitbox : MonoBehaviour {
 				}
 			}
 			if(!hadOne){
-				GameController.GetComponent<GameController>().OnAction(false);
+				gameControllerObj.GetComponent<GameController>().OnAction(false);
+				FallMonkeyFall();
 			}hadOne = false;
 		}
 	}
 
 	private void Dance(int move){
-		audio.Play();
+		audio.PlayOneShot(sounds[0]);
 		player.GetComponent<SpriteRenderer>().sprite = danceMoves[move];
+		player.GetComponent<Animator>().enabled = false;
+		player.transform.localScale = danceScale;
+		player.transform.position = dancePos;
+		Invoke ("DanceMonkeyDance", 0.3f);
+	}
+
+	private void DanceMonkeyDance(){
+		player.GetComponent<Animator>().enabled = true;
+		player.transform.localScale = startScale;
+		player.transform.position = startPos;
+	}
+
+	private void FallMonkeyFall(){
+		audio.PlayOneShot(sounds[1]);
+		Dance (4);
 	}
 
 	private void ProcessArrow(GameObject arrow){
-		GameController.GetComponent<GameController>().OnAction(true, this.transform.position.x, arrow.transform.position.x); //process de arrow
+		gameControllerObj.GetComponent<GameController>().OnAction(true, this.transform.position.x, arrow.transform.position.x); //process de arrow
 		hadOne = true; //reset the boolean
-		arrowsInHitBox.Remove(arrow); //haal de arrow uit de array
 		arrow.GetComponent<Arrow>().Explode(); //Vernietig de arrow en laat het gebouw exploderen.
 		particleSystem.GetComponent<ParticleSystem>().Emit(50); //emit een paar particles
+		arrowsInHitBox.Remove(arrow); //haal de arrow uit de array
 	}
 
 	private void OnTriggerExit2D(Collider2D col){
