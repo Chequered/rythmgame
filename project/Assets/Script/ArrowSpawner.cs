@@ -18,6 +18,7 @@ public class ArrowSpawner : MonoBehaviour {
 			pos.z = hitBox.transform.position.z;
 			GameObject arrow = GameObject.Instantiate(Arrow, pos, Quaternion.identity) as GameObject;
 			arrow.GetComponent<Arrow>().ID = i;
+			GameController.arrowsInGame.Add(arrow);
 		}
 	}
 }

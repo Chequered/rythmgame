@@ -44,53 +44,55 @@ public class Hitbox : MonoBehaviour {
 
 	private bool hadOne;//een boolean die aangeeft of er een arrow goed was tijdens een foreach loop
 	private void GetInput(){
-		if(Input.GetKeyDown(KeyCode.UpArrow)){//als je de up arrow indrukt
-			foreach(GameObject arrow in arrowsInHitBox){//een loop die de directie van elke arrow vergelijkt met de knop die ingedrukt word.
-				if(arrow.GetComponent<Arrow>().Direction == "up"){ //als de richting klopt met de knop
-					ProcessArrow(arrow);//do er dan iets meer
-					Dance (0);
+		if(!GameController.status){
+			if(Input.GetKeyDown(KeyCode.UpArrow)){//als je de up arrow indrukt
+				foreach(GameObject arrow in arrowsInHitBox){//een loop die de directie van elke arrow vergelijkt met de knop die ingedrukt word.
+					if(arrow.GetComponent<Arrow>().Direction == "up"){ //als de richting klopt met de knop
+						ProcessArrow(arrow);//do er dan iets meer
+						Dance (0);
+					}
 				}
+				if(!hadOne){//als er geen arrow goed was (dus als je de verkeerde knop hebt ingedrukt)
+					gameControllerObj.GetComponent<GameController>().OnAction(false);//process hem dan
+					FallMonkeyFall();
+				}hadOne = false;//reset de boolean
 			}
-			if(!hadOne){//als er geen arrow goed was (dus als je de verkeerde knop hebt ingedrukt)
-				gameControllerObj.GetComponent<GameController>().OnAction(false);//process hem dan
-				FallMonkeyFall();
-			}hadOne = false;//reset de boolean
-		}
-		else if(Input.GetKeyDown(KeyCode.RightArrow)){//als je de right arrow indrukt
-			foreach(GameObject arrow in arrowsInHitBox){
-				if(arrow.GetComponent<Arrow>().Direction == "right"){
-					ProcessArrow(arrow);
-					Dance (1);
+			else if(Input.GetKeyDown(KeyCode.RightArrow)){//als je de right arrow indrukt
+				foreach(GameObject arrow in arrowsInHitBox){
+					if(arrow.GetComponent<Arrow>().Direction == "right"){
+						ProcessArrow(arrow);
+						Dance (1);
+					}
 				}
+				if(!hadOne){
+					gameControllerObj.GetComponent<GameController>().OnAction(false);
+					FallMonkeyFall();
+				}hadOne = false;
 			}
-			if(!hadOne){
-				gameControllerObj.GetComponent<GameController>().OnAction(false);
-				FallMonkeyFall();
-			}hadOne = false;
-		}
-		else if(Input.GetKeyDown(KeyCode.DownArrow)){//als je de down arrow indrukt
-			foreach(GameObject arrow in arrowsInHitBox){
-				if(arrow.GetComponent<Arrow>().Direction == "down"){
-					ProcessArrow(arrow);
-					Dance (2);
+			else if(Input.GetKeyDown(KeyCode.DownArrow)){//als je de down arrow indrukt
+				foreach(GameObject arrow in arrowsInHitBox){
+					if(arrow.GetComponent<Arrow>().Direction == "down"){
+						ProcessArrow(arrow);
+						Dance (2);
+					}
 				}
+				if(!hadOne){
+					gameControllerObj.GetComponent<GameController>().OnAction(false);
+					FallMonkeyFall();
+				}hadOne = false;
 			}
-			if(!hadOne){
-				gameControllerObj.GetComponent<GameController>().OnAction(false);
-				FallMonkeyFall();
-			}hadOne = false;
-		}
-		else if(Input.GetKeyDown(KeyCode.LeftArrow)){//als je de left arrow indrukt
-			foreach(GameObject arrow in arrowsInHitBox){
-				if(arrow.GetComponent<Arrow>().Direction == "left"){
-					ProcessArrow(arrow);
-					Dance (3);
+			else if(Input.GetKeyDown(KeyCode.LeftArrow)){//als je de left arrow indrukt
+				foreach(GameObject arrow in arrowsInHitBox){
+					if(arrow.GetComponent<Arrow>().Direction == "left"){
+						ProcessArrow(arrow);
+						Dance (3);
+					}
 				}
+				if(!hadOne){
+					gameControllerObj.GetComponent<GameController>().OnAction(false);
+					FallMonkeyFall();
+				}hadOne = false;
 			}
-			if(!hadOne){
-				gameControllerObj.GetComponent<GameController>().OnAction(false);
-				FallMonkeyFall();
-			}hadOne = false;
 		}
 	}
 
@@ -120,6 +122,7 @@ public class Hitbox : MonoBehaviour {
 		arrow.GetComponent<Arrow>().Explode(); //Vernietig de arrow en laat het gebouw exploderen.
 		particleSystem.GetComponent<ParticleSystem>().Emit(50); //emit een paar particles
 		arrowsInHitBox.Remove(arrow); //haal de arrow uit de array
+		GameController.arrowsInGame.Remove(arrow);
 	}
 
 	private void OnTriggerExit2D(Collider2D col){

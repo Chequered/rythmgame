@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
@@ -12,6 +13,14 @@ public class GameController : MonoBehaviour {
 	public static int lives;
 	public static float globalArrowSpeed;
 	public static bool status;
+	public static List<GameObject> arrowsInGame = new List<GameObject>();
+
+	private void Update(){
+		Debug.Log (arrowsInGame.Count);
+		if(arrowsInGame.Count <= 0){
+			status = true;
+		}
+	}
 
 	private void Awake(){
 		lives = startingHealth;

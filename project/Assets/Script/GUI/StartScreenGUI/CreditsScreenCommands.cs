@@ -6,6 +6,7 @@ public class CreditsScreenCommands : MonoBehaviour {
 	float relativeForce = 0.1f;
 	float relativeWaitingtime = 0.01f;
 	float screenPos;
+	public GameObject allRelativeComponents;
 	public void GoCredits()	
 	{
 		StartCoroutine(CreditsButtonPushed());
@@ -44,6 +45,8 @@ public class CreditsScreenCommands : MonoBehaviour {
 			transform.position -= new Vector3(relativeForce, 0, 0);
 			yield return new WaitForSeconds(relativeWaitingtime);
 			StartCoroutine(StartGameButtonPushed());
+		}else{	
+			allRelativeComponents.SetActive(true);
 		}
 	}
 }
